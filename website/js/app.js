@@ -40,7 +40,7 @@ const updateUi = async(url='')=>{
         const data = await res.json() ;
         document.querySelector('#date').textContent=`date: ${data['date']}`;
         document.querySelector('#temp').textContent=`temprature: ${data['temp']}`;
-        document.querySelector('#feelings').textContent=`feeling: ${data['userRes']}`;
+        document.querySelector('#content').textContent=`feeling: ${data['userRes']}`;
         document.querySelector('#holder-entry').style.visibility='visible';
         return data;
     }
@@ -53,6 +53,10 @@ const updateUi = async(url='')=>{
 
 document.querySelector('#generate').addEventListener('click',()=>{
     zipCode=document.querySelector('#zip').value;
+    if (typeof zipCode !== "number"){
+        alert("Please enter a valid Zip code");
+        return null;
+    }
     getweather(weatherApiBaseLnk,weatherApiKey,`zip=${zipCode},us`)
     .then((data)=>{
         const userfeeling = document.querySelector('#feelings').value;
