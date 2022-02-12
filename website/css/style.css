@@ -1,0 +1,73 @@
+body{
+    font-family: Oswald sans-serif;
+    font-size: 4vh;
+    background-color: cornflowerblue;
+}
+
+#holder-headline{
+    text-align: center;
+    margin: 5vh;
+    font-size: 6vh ;
+}
+
+input,textarea,button{
+    width: 100%;
+    min-height: 6vh;
+    resize: vertical;
+    border-bottom: 2px solid rgb(22, 56, 83);
+    border-radius: 4px;
+    margin: 2vh 0vh;
+}
+
+input:active,textarea:active,button:active{
+    border-bottom: 3px solid rgb(233, 190, 96);
+}
+
+#app{
+    margin: 5vh ;
+}
+
+label{
+    padding: 1vh 1vh 1vh 0;
+    display: inline-block; 
+}
+
+button{
+    background-color: rgb(233, 190, 96);
+    color: white;
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+#holder-entry{
+    margin-top: 4vh;
+    float: right;
+    text-align:right;
+    visibility: hidden;
+}
+
+/** Page Layout **/
+
+.col-25{
+    float: left;
+    width: 25%;
+}
+
+.col-75{
+    float: right;
+    width: 75%;
+}
+
+.row:after{
+    display: table;
+    content: "";
+    clear:both;
+}
+@media screen and (max-width:800px){
+    .col-25,.col-75{
+        width: 100%;
+    }
+    #holder-entry{
+        text-align: center;
+    }
+}
