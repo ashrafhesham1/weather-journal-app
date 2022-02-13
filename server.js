@@ -1,5 +1,5 @@
 //API end point
-let projectData=[];
+let projectData={};
 
 const port = 8000 ;
 
@@ -25,7 +25,7 @@ app.listen(port,() =>{
 
 app.get('/retrieve',(req,res)=>{
     console.log(`server has recieved: get request on /retrieve`);
-    res.send(projectData[projectData.length-1]);
+    res.send(projectData);
 })
 
 
@@ -37,5 +37,5 @@ app.post('/update',(req,res)=>{
         userRes:newData.userRes
     };
     console.log(`server has recieved: Post request on /update data: `);
-    projectData.push(newEntry);
+    projectData=newEntry;
 })
