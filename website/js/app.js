@@ -53,10 +53,6 @@ const updateUi = async(url='')=>{
 
 document.querySelector('#generate').addEventListener('click',()=>{
     zipCode=document.querySelector('#zip').value;
-    if (typeof zipCode !== "number"){
-        alert("Please enter a valid Zip code");
-        return null;
-    }
     getweather(weatherApiBaseLnk,weatherApiKey,`zip=${zipCode},us`)
     .then((data)=>{
         const userfeeling = document.querySelector('#feelings').value;
